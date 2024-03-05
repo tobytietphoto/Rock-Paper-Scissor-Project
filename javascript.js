@@ -14,7 +14,43 @@ console.log(getComputerChoice())
 // The result will then get loged onto console.
 
 let getPlayerChoice = prompt("Pick one: Rock Paper Scissor");
+// prompt for player's input.
+
+let playerChoiceLowerCase = getPlayerChoice.toLowerCase();
+// variable to convert prompt answer to lowercase.
+
+console.log(playerChoiceLowerCase)
+// prints into console.
+
+function playerChoice(choice) {
+    if (choice === "rock") {
+        return "rock";
+    } else if (choice === "paper") {
+        return "paper";
+    } else if (choice === "scissors") {
+        return "scissor";
+    } else {
+        return "invalid";
+    }
+}
+
+console.log(playerChoice())
+
 /* A variable that will bring up a prompt so user can pick between
 rock, paper, scissors.
 */
-console.log(getPlayerChoice);
+//let playerChoiceLowerCase = getPlayerChoice.toLowerCase();
+/*
+function game(playerChoiceLowerCase, computerChoice) {
+    if ("rock" && "scissors") {
+        return "I win!"
+    } else if ("rock" && "rock") {
+        return "It's a tie!"
+    } else if ("rock" && "paper") {
+        return "Computer wins!"
+    } else if ("scissors" && "scissors") {
+        return "It's a tie!"
+    } else ("paper" && "paper")
+        return "It's a tie!"
+};
+*/
