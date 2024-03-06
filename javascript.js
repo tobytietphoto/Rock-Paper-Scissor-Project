@@ -1,42 +1,63 @@
-let pick = ["rock", "paper", "scissors"];
+choices = ["rock", "paper", "scissor"];
 
 function getComputerChoice() {
- const random = Math.floor(Math.random() * pick.length);
- console.log(pick[random]);
-};
-
-let choice = prompt("Pick one: rock paper scissor").toLowerCase()
-
-    if  (choice === "rock") {
-        console.log("rock");
-        } else if (choice === "paper") {
-        console.log("paper");
-        } else if (choice === "scissors") {
-        console.log("scissor");
-        } else {
-        console.log("invalid");
-        }
-
-function game(choice, getComputerChoice) {
-    if ("rock" && "rock") {
-        alert("Tie!");
-    } else if ("rock" && "paper") {
-        alert("Sorry, you loss!");
-    } else if ("rock" && "scissor") {
-        alert("Congrats! you win!");
-    } else if ("paper" && "rock") {
-        alert("Congrats! you win!");
-    } else if ("paper" && "paper") {
-        alert("Tie!");
-    } else if ("paper" && "scissor") {
-        alert("Sorry, you loss!");
-    } else if ("scissor" && "rock") {
-        alert("Congrats! You win!");
-    } else if ("scissor" && "paper") {
-        alert("Sorry, you loss!");
-    } else if ("scissor" && "scissor") {
-        alert("Tie");
-    }
+const random = Math.floor(Math.random() * choices.length)
+return(choices[random]);
 }
 
-console.log(game(choice, getComputerChoice))
+//console.log(getComputerChoice())
+
+let playerPrompt = prompt("Select one: rock, paper, scissor");
+
+let selection = playerPrompt.toLowerCase()
+
+function getPlayerSelection(selection) {
+    if (selection === "rock") {
+            return("rock");
+            } else if (selection === "paper") {
+            return("paper");
+            } else if (selection === "scissor") {
+            return("scissor");
+            } else {
+            return("invalid");
+            }
+        }
+
+console.log(getPlayerSelection(selection))
+
+let computerSelection = getComputerChoice();
+//console.log(computerSelection)
+// Tested! it works!
+
+let playerSelection = selection;
+//console.log(playerSelection)
+// Tested. It also works!
+
+function playRound(a, b) {
+    if (a == "rock" && b == "rock") {
+    return "tie!";
+    } else if (a == "rock" && b == "paper") {
+    return "You lose!";
+    } else if (a == "rock" && b == "scissor") {
+    return "You win!";
+    } else if (a == "paper" && b == "rock") {
+    return "You win!";
+    } else if (a == "paper" && b == "paper") {
+    return "Tie!"
+    } else if (a == "paper" && b == "scissor") {
+    return "You Lose!"
+    } else if (a == "scissor" && b == "rock") {
+    return "You lose!"
+    } else if (a == "scissor" && b == "paper") {
+    return "You win!"
+    } else if (a == "scissor" && b == "scissor") {   
+    return "Tie!" 
+    } else if (a == "invalid" && b == "rock") {
+    return "Not valid"       
+    } else if (a =="invalid" && b == "paper") {
+    return "Not valid" 
+    } else (a=="invalid" && b == "scissors") 
+    return "Not valid" 
+}
+
+console.log(playRound(playerSelection, computerSelection))
